@@ -1,0 +1,174 @@
+/* ------------------------------- *
+ * --------- Hero Section -------- *
+ * ------------------------------- */
+/* Section´s General Layout */
+ .hero {
+    padding: $p-1 $p-15;
+    text-align: center;
+
+    .main_title {
+        margin-bottom: $m-2;
+    }
+
+}
+
+/* Image on top of input */
+.welcome {
+    width: $first-img-mob-size;
+    display: block;
+    margin: $margin-center;
+}
+
+/* Input Styles */
+.search {
+    width: 100%;
+    @include flexbox(column,space-between);
+    border: 1px solid $main-color;
+    border-radius: 27px;
+    padding: $p-1;
+    padding-bottom: 0;
+
+    &__container {
+        @include flexbox(row, space-between);
+        width: 100%;
+        padding: 0;
+        margin-bottom: $m-1;
+    }
+
+    &__input {
+        border: none;
+        outline: none;
+        width: 95%;
+        background-color: transparent;
+        margin-left: $m-05;
+        font-size: 1rem;
+    }
+
+    &__btn {
+        
+        i {
+            color: $grey-btn-color;
+        }
+    }
+
+}
+
+/* Buttons Styles */
+.search__btn,
+.right__btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.right__btn {
+    
+    i {
+        color: $main-color;
+    }
+}
+
+/* Suggestions container */
+.autocomplete_content {
+    width: 100%;
+    padding: 0;
+    font-size: 1rem;
+    background-color: transparent;
+    color: $grey-btn-color;
+
+}
+
+/* Suggestions format */
+.suggested {
+    @include flexbox(row, flex-start);
+    width: 100%;
+    padding: 0;
+    padding-top: $p-1;
+
+    &:first-child {
+        border-top: 1px solid $grey-btn-color;
+    }
+
+    &:last-child {
+        margin-bottom: $m-1;
+    }
+
+    &__text {
+        margin-left: $m-1;
+    }
+}
+
+//Most searched words 
+.trending {
+
+    //Words container
+    &__topics {
+        width: 60vw;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: $margin-center;
+        text-align: center;
+    }
+
+    /* Most searched Title */
+    &__title {
+        margin-top: $m-2;
+    }
+
+    /* Most searched Items */
+    &__links {
+        margin-left: 0.5rem;
+        cursor: pointer;
+        display: inline;
+    }
+
+}
+
+
+
+
+/* ----- End of Hero Section ----- */
+/*                                 */
+
+/* ------------------------------- *
+ * ------ Trendings Section ------ *
+ * ------------------------------- */
+/* Section´s General Layout */
+ .trending {
+    background-color: $light-back-color;
+    padding: $p-1 $p-15;
+    text-align: center;
+
+    .section_title {
+        margin-top: $m-2;
+    }
+
+    .text {
+        color: $dark-color;
+        margin-bottom: $m-2;
+    }
+}
+/* -- End of Trendings Section --- */
+/*                                 */
+
+
+
+/* ------------------------------- *
+ * ----------- Footer ------------ *
+ * ------------------------------- */
+ /* Section´s General Layout */
+.footer {
+    @include flexbox(column, space-evenly);
+    padding: $p-15;
+    border-bottom: 0.31rem solid $main-color;
+    
+    .small_text {
+        color: $dark-color;
+    }
+
+}
+/* -------- End of Footer -------- */
+/*                                 */

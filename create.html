@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3bc7d78e54.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/css/styles.css">
+    <title>GIFOS: Crear nuevo GIFO</title>
+</head>
+
+<body>
+    <header class="navbar" id="navbar">
+        <a href="index.html">
+            <img src="./images/logo-mobile.svg" alt="logo" id="logo" class="logo"/>
+        </a>
+        <div id="search" class="search">
+            <input class="search__input" type="text" placeholder="Busca GIFOS y más">
+            <i class="fas fa-search"></i>
+        </div>
+        <nav>
+            <button id="burger" class="burger"><i id="burger_icon" class="fas fa-bars"></i></button>
+            <ul class="menu invisible" id="menu">
+                <li class="menu__item" id="theme_btn" ><a href="#" id="theme_link">Modo nocturno</a></li>
+                <li class="menu__line"></li>
+                <li class="menu__item" id="fav_btn"><a href="">Favoritos</a></li>
+                <li class="menu__line"></li>
+                <li class="menu__item" id="my_gifos_btn"><a href="">Mis GIFOS</a></li>
+                <li class="menu__line"></li>
+                <li class="menu__item"><a href="create.html"><img src="./images/button-crear-gifo.svg" id="create_img" alt=""></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="create">
+            <div class="create__layout">
+                <div class="camera">
+                    <img src="./images/camara.svg" alt="cámara">
+                </div>
+                <div class="upload__container">
+                    <div class="upload__gifo">
+                        <h2 class="section_title">Aquí podrás <br> crear tus propios <span class="turquoise">GIFOS</span> </h2>
+                        <p class="text">¡Crea tu GIFO en solo 3 pasos! <br> (solo necesitas una cámara para grabar un video)</p>
+                    </div>
+                </div>
+                <div class="empty"></div>
+            </div>
+            <div class="upload__btns">
+                <a href="#" class="btn">1</a>
+                <a href="#" class="btn">2</a>
+                <a href="#" class="btn">3</a>
+            </div>
+            <div class="upload__bar"></div>
+            <a href="#" class="btn">Comenzar</a>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="social">
+            <p class="small_text">Compartir en:</p>
+            <div class="social__icons">
+                <a href="https://www.facebook.com/">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="small_text">
+            © GIFOS 2020 — All Rights Reserved
+        </div>
+
+    </footer>
+
+        <!-- Script Links -->
+        <script src="./script/main.js"></script>
+        <script src="./script/trending.js"></script>
+        <script src="./script/search.js"></script>
+</body>
+
+</html>
