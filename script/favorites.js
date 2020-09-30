@@ -48,11 +48,33 @@ function renderFavorites() {
         favoriteArray = JSON.parse(favoriteString);
         console.log(favoriteArray);
         let urlFavorites = `https://api.giphy.com/v1/gifs?ids=${favoriteArray.toString()}&api_key=${api_key}`;
-        getData(urlFavorites, fav_grifos, fav_act_img);
+        getData(urlFavorites, fav_grifos, fav_act_img, fav_remove);
 
     }
 }
 
+//onclick="removeFav('${gifo.id}')"
+//Erase Favorite Gifo
+function removeFav(gifo){
+    let arrayAux = [];
+    arrayAux = JSON.parse(favoriteString);
+    let index = arrayAux.indexOf(gifo);
+    console.log(arrayAux);
+    console.log(index);
+
+    arrayAux.splice(index, 1);
+
+    let newFavoritesString = JSON.stringify(arrayAux);
+    localStorage.setItem("favoriteGifos", newFavoritesString);
+    console.log(favoriteString);
+
+    //Change icon
+    let eraseIconFav = document.getElementById('icon-fav-' + gifo);
+    eraseIconFav.setAttribute("src", "./assets/icon-fav-hover.svg");
+
+    //refresco pag
+    location.reload();
+}
 
 
 /* --------------- End of Favorites JS ---------------- */

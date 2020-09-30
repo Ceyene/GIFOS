@@ -6,17 +6,19 @@ const icon_search = "./images/icon-busqueda-sin-resultado.svg";
 const results_grid = document.getElementById("results_grid");
 const more_btn = document.getElementById("more_btn");
 const fav_img = "./images/icon-fav.svg";
+const fav_add = "addFavorite";
+const fav_remove = "removeFav";
 
 /* ------------ Trending Gifos --------------- */
 
 //Template for new gifo
-function gifoBoxTemplate(gifo, favButton) {
+function gifoBoxTemplate(gifo, favButton, favFunction) {
     return (
       `<div class="gifo" onclick="maxGifosMobile('${gifo.images.downsized.url}', '${gifo.id}', '${gifo.slug}', '${gifo.username}', '${gifo.title}')">
             <img class="gifo__img" src=${gifo.images.downsized.url} alt=${gifo.title} >
                 <div class="gifo__hover">
                     <div class="gifo__buttons">
-                        <img src=${favButton} alt="favorite" class="fav_btn" id="icon-fav-${gifo.id}" onclick="addFavorite('${gifo.id}')">
+                        <img src=${favButton} alt="favorite" class="fav_btn" id="icon-fav-${gifo.id}" onclick="${favFunction}('${gifo.id}')">
                         <img src="./images/icon-download-hover.svg" alt="download" class="download_btn" onclick="downloadGifo('${gifo.images.downsized.url}', '${gifo.slug}')">
                         <img src="./images/icon-max-hover.svg" alt="fullsize" class="max_btn" onclick="maxGifosDesktop('${gifo.images.downsized.url}', '${gifo.id}', '${gifo.slug}', '${gifo.username}', '${gifo.title}')">
                     </div>
@@ -45,7 +47,7 @@ function noResults(iconUrl, place, msg){
 }
 
 //Rendering Gifos
-function renderAllGifos(arrayGifos, container, favButton){
+function renderAllGifos(arrayGifos, container, favButton, favFunction){
     let content = "";
 
     //First, verify if array of gifos is empty and render error
@@ -56,7 +58,7 @@ function renderAllGifos(arrayGifos, container, favButton){
     } else {
         //If array of gifos is not empty, render it
         for (const gifo of arrayGifos.data) {
-            content += gifoBoxTemplate(gifo, favButton);
+            content += gifoBoxTemplate(gifo, favButton, favFunction);
         }
         container.innerHTML += content;
     }
@@ -64,19 +66,19 @@ function renderAllGifos(arrayGifos, container, favButton){
 
   
 //Get data from API
-function getData(url, container, favButton){
+function getData(url, container, favButton, favFunction){
     fetch(url)
         .then((response) => response.json())
         .then((content) => {
             console.log(content);
-            renderAllGifos(content, container, favButton);
+            renderAllGifos(content, container, favButton, favFunction);
         })
         .catch((error) => console.log("Gifo no encontrado: ", error));
 };
 
 //Obtain the data from Giphy Api and send it to Trending section HTML
 function trendings() {
-    getData(url_trending, slider, fav_img);
+    getData(url_trending, slider, fav_img, fav_add);
 }
 
 trendings();
