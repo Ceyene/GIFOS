@@ -46,7 +46,7 @@ function maxGifos(img, id, slug, user, title) {
                     <p class="modal__title">${title}</p>
                 </div>
                 <div>
-                    <button class="fav_btn" onclick="addFavorite('${id}')"><img src="./images/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-max-${id}"></button>
+                    <button class="fav_btn" onclick="addFavorite('${id}')"><img src="./images/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-${id}"></button>
                     <button class="download_btn" onclick="downloadGifo('${img}', '${slug}')"><img src="./images/icon-download.svg" alt="download-gif"></button>
                 </div>
             </div>

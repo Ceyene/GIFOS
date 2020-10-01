@@ -51,6 +51,10 @@
           @include link(capitalize);
           color: $light-color;
         }
+
+        &:last-child {
+          display: none;
+        }
     }
 
     &__line {

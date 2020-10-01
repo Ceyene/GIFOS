@@ -51,6 +51,21 @@
         @include titles(1rem, 1.56rem, 700);
     }
 
+    //Favorite and Download Buttons
+    .fav_btn,
+    .download_btn {
+        background-color: transparent;
+        border: none;
+    }
+
+    .fav_btn {
+        margin-right: $m-05;
+    }
+
+    .download_btn {
+        margin-left: $m-05;
+    }
+
 }
 
 //Close modal button
@@ -66,21 +81,6 @@
         color: $main-color;
         font-size: 1.5rem;
     }
-}
-
-//Favorite and Download Buttons
-.fav_btn,
-.download_btn {
-    background-color: transparent;
-    border: none;
-}
-
-.fav_btn {
-    margin-right: $m-05;
-}
-
-.download_btn {
-    margin-left: $m-05;
 }
 
 /* --------------- End of Modal Gifo ------------- */

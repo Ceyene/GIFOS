@@ -18,9 +18,15 @@ function gifoBoxTemplate(gifo, favButton, favFunction) {
             <img class="gifo__img" src=${gifo.images.downsized.url} alt=${gifo.title} >
                 <div class="gifo__hover">
                     <div class="gifo__buttons">
-                        <img src=${favButton} alt="favorite" class="fav_btn" id="icon-fav-${gifo.id}" onclick="${favFunction}('${gifo.id}')">
-                        <img src="./images/icon-download-hover.svg" alt="download" class="download_btn" onclick="downloadGifo('${gifo.images.downsized.url}', '${gifo.slug}')">
-                        <img src="./images/icon-max-hover.svg" alt="fullsize" class="max_btn" onclick="maxGifosDesktop('${gifo.images.downsized.url}', '${gifo.id}', '${gifo.slug}', '${gifo.username}', '${gifo.title}')">
+                        <button class="gifo__btn">
+                            <img src=${favButton} alt="favorite" class="fav_btn" id="icon-fav-${gifo.id}" onclick="${favFunction}('${gifo.id}')">
+                        </button>
+                        <button class="gifo__btn">
+                            <img src="./images/icon-download-hover.svg" alt="download" class="download_btn" onclick="downloadGifo('${gifo.images.downsized.url}', '${gifo.slug}')">
+                        </button>
+                        <button class="gifo__btn">
+                            <img src="./images/icon-max-hover.svg" alt="fullsize" class="max_btn" onclick="maxGifosDesktop('${gifo.images.downsized.url}', '${gifo.id}', '${gifo.slug}', '${gifo.username}', '${gifo.title}')">
+                        </button>
                     </div>
                     <div class="gifo__text">
                         <p>${gifo.username}</p>

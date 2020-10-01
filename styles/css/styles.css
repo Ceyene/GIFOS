@@ -87,6 +87,14 @@ input {
   line-height: 1.44rem;
 }
 
+.counter_text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.94rem;
+  line-height: 1.38;
+  text-align: center;
+}
+
 .trending__links {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -288,6 +296,10 @@ input {
   text-transform: capitalize;
   letter-spacing: 0;
   color: #FFFFFF;
+}
+
+.menu__item:last-child {
+  display: none;
 }
 
 .menu__line {
@@ -513,9 +525,15 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   background-color: #572EE5;
   opacity: 0;
   z-index: 1;
+}
+
+.gifo:hover__hover {
+  opacity: 1;
 }
 
 .gifo__buttons {
@@ -529,21 +547,43 @@ input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 10rem;
+  width: 12rem;
   opacity: 1;
 }
 
-.gifo__buttons img {
+.gifo__btn {
+  width: 3rem;
+  height: 3rem;
   margin: 0.3rem;
   padding: 0.44rem;
+  position: relative;
   opacity: 0.5;
   z-index: 3;
   background-color: #FFFFFF;
   border-radius: 7%;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.gifo__buttons img:hover {
+.gifo__btn:hover {
   opacity: 1;
+}
+
+.gifo__btn img {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .gifo__text {
@@ -628,6 +668,20 @@ input {
   text-align: center;
 }
 
+.modal .fav_btn,
+.modal .download_btn {
+  background-color: transparent;
+  border: none;
+}
+
+.modal .fav_btn {
+  margin-right: 0.5rem;
+}
+
+.modal .download_btn {
+  margin-left: 0.5rem;
+}
+
 .close_modal_btn {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -640,20 +694,6 @@ input {
 .close_modal_btn i {
   color: #572EE5;
   font-size: 1.5rem;
-}
-
-.fav_btn,
-.download_btn {
-  background-color: transparent;
-  border: none;
-}
-
-.fav_btn {
-  margin-right: 0.5rem;
-}
-
-.download_btn {
-  margin-left: 0.5rem;
 }
 
 /* --------------- End of Modal Gifo ------------- */
@@ -738,6 +778,27 @@ input {
   width: 100%;
 }
 
+.create__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.create__controls .empty {
+  width: 20%;
+}
+
 .create .text {
   color: #000000;
 }
@@ -804,8 +865,10 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 21rem;
+  width: 90%;
+  margin: 0 auto;
+  height: 20rem;
+  position: relative;
 }
 
 .upload__btns {
@@ -827,22 +890,94 @@ input {
   padding-top: 1.5rem;
 }
 
-.upload__btns .btn {
+.upload__btns .each {
   font-family: "Roboto", sans-serif;
   padding: 0.4rem 0.6rem;
   font-size: 1.13rem;
   line-height: 0.94rem;
+  border-radius: 50%;
 }
 
 .upload__bar {
-  width: 60%;
+  width: 100%;
   height: 0.43rem;
   background-color: #572EE5;
   margin: 1.5rem auto;
 }
 
+.controls {
+  width: 60%;
+  position: relative;
+}
+
+.counter {
+  text-align: right;
+  position: absolute;
+  top: 15%;
+  right: 8%;
+}
+
+.counter__recording {
+  text-align: right;
+}
+
+.counter__repeat {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #572EE5;
+}
+
+.step {
+  background-color: transparent;
+  border: 1px solid #572EE5;
+  color: #572EE5;
+}
+
+.step_now {
+  background-color: #572EE5;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
 .empty {
   width: 25%;
+}
+
+.film_reel {
+  width: 20%;
+}
+
+.film_reel img {
+  width: 8.88rem;
+}
+
+.overlay {
+  background-color: #572EE5;
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay__icon {
+  width: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.overlay .gifo__buttons {
+  width: 7rem;
+}
+
+.overlay .counter_text {
+  color: #FFFFFF;
+}
+
+.recording_video {
+  width: 100%;
+  height: 20rem;
 }
 
 /* - End of Create Gifos Section - */
@@ -1077,9 +1212,6 @@ input {
   .menu__item:first-child {
     margin-left: 0;
   }
-  .menu__item:last-child {
-    margin-right: 0;
-  }
   .menu__item a {
     color: #572EE5;
     text-transform: uppercase;
@@ -1200,13 +1332,6 @@ input {
             box-shadow: 0 2px 4px 1px rgba(156, 175, 195, 0.55);
     -webkit-transition: opacity 0.5s 0.5s ease;
     transition: opacity 0.5s 0.5s ease;
-    /* Shows Search Bar in Navbar */
-  }
-  html:not([data-scroll='0']) .navbar .search {
-    display: block;
-    width: 25%;
-    -webkit-transition: opacity 0.5s 0s ease;
-    transition: opacity 0.5s 0s ease;
   }
   /* End of Changes when scrolling down */
   /*                                    */
@@ -1217,6 +1342,10 @@ input {
   }
   .menu__item:hover {
     border-bottom: 2px solid #5ED7C6;
+  }
+  .menu__item:last-child {
+    margin-right: 0;
+    display: block;
   }
   .menu__item:last-child:hover {
     border-bottom: none;

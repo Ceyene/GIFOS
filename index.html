@@ -289,17 +289,53 @@
                     <div class="upload__gifo">
                         <h2 class="section_title">Aquí podrás <br> crear tus propios <span class="turquoise">GIFOS</span> </h2>
                         <p class="text">¡Crea tu GIFO en solo 3 pasos! <br> (solo necesitas una cámara para grabar un video)</p>
+
+                        <div class="overlay hide" id="overlay_video">
+
+                            <div class="gifo__buttons" id="overlay_video_actions">
+                                <button class="gifo__btn" id="download_btn" onclick="downloadGifo('${gifoId}')">
+                                    <img src="./images/icon-download-hover.svg" alt="download">
+                                </button>
+                                <button class="gifo__btn" id="link_btn">
+                                    <img src="./images/icon-link-hover.svg" alt="link">
+                                </button>
+                            </div>
+
+                            <div class="overlay__info" id="overlay_video_info">
+                                <img src="./images/loader.svg" class="overlay__icon" alt="loading gifo" id="overlay_video_icon">
+                                <p class="counter_text" id="overlay_video_text">Estamos subiendo tu GIFO</p>
+                            </div>
+
+                        </div>
+
+                        <video class="recording_video hide" src="" id="recording_video"></video>
+
                     </div>
                 </div>
                 <div class="empty"></div>
             </div>
-            <div class="upload__btns">
-                <a href="#" class="btn">1</a>
-                <a href="#" class="btn">2</a>
-                <a href="#" class="btn">3</a>
+            <div class="create__controls">
+                <div class="empty"></div>
+                <div class="controls">
+                    <div class="upload__btns">
+                        <p class="each step" id="creategifo_step_first">1</p>
+                        <p class="each step" id="creategifo_step_second">2</p>
+                        <p class="each step" id="creategifo_step_third">3</p>
+                    </div>
+        
+                    <div class="counter">
+                        <p class="counter__recording counter_text" id="counter_recording">0:00:00</p>
+                        <button class="counter__repeat counter_text hide" id="counter_repeat">Repetir captura</button>
+                    </div>
+        
+                    <div class="upload__bar"></div>
+                    <a href="#" class="btn">Comenzar</a>
+                </div>
+                <div class="film_reel">
+                    <img src="./images/pelicula.svg" alt="Rollo película" id="film_reel">
+                </div>
             </div>
-            <div class="upload__bar"></div>
-            <a href="#" class="btn">Comenzar</a>
+            
         </section>
 
     </main>

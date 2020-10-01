@@ -115,6 +115,10 @@ input {
     @include texts(1rem, 1.44rem);
 }
 
+.counter_text {
+    @include titles(0.94rem, 1.38, 700);
+}
+
 .trending__links{
     @include titles(0.88rem, 1.56rem, 500);
 } 
