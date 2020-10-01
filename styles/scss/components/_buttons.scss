@@ -3,7 +3,6 @@
  * ------------------------------- */
 .btn {
     @include link(uppercase);
-    display: inline-block;
     margin: $m-48 auto;
     padding: $p-1 $p-25;
     width: auto;
@@ -11,6 +10,7 @@
     border-radius: 1.9rem;
     cursor: pointer;
     text-align: center;
+    display: inline-block;
     outline: none;
     transition: all 0.2s ease-in;
 }

@@ -52,8 +52,18 @@
         }
     }
 
+    //Dark Theme in Modals
+    .modal {
+        background: rgba(34, 35, 38,0.90);
+
+        &__text {
+            color: $light-color;
+        }
+    }
+
     // Dark Theme in Buttons
-.btn {
+.btn,
+.button {
     border-color: $light-color;
     color: $light-color;
 
@@ -61,6 +71,16 @@
         background-color: $light-color;
         color: $dark-back-color;
     }
+}
+
+.step {
+    border-color: $light-color;
+    color: $light-color;
+}
+
+.step_now {
+        background-color: $light-color;
+        color: $dark-back-color;
 }
 
     // Dark Theme in Trending Gifos Section

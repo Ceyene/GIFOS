@@ -85,6 +85,8 @@ create_img.addEventListener("mouseout", ()=> {
 const theme_btn = document.getElementById("theme_btn");
 const body = document.getElementById("body");
 const logo = document.getElementById("logo");
+const camera = document.getElementById("camera");
+const film_reel = document.getElementById("film_reel");
 const theme_link = document.getElementById("theme_link");
 
 // When click on "MODO NOCTURNO" link, apply dark mode
@@ -98,6 +100,9 @@ theme_btn.addEventListener("click", (e)=> {
     create_img.src = "./images/CTA-crear-gifo-modo-noc.svg";
     //Dark mode logo
     logo.src = "./images/Logo-modo-noc.svg";
+    //Dark mode images in Create Section
+    camera.src ="./images/camara-modo-noc.svg";
+    film_reel.src = "./images/pelicula-modo-noc.svg";
     //Change in link to "MODO DIURNO" text
     theme_link.textContent = "Modo diurno";
   } else {
@@ -107,6 +112,9 @@ theme_btn.addEventListener("click", (e)=> {
     create_img.src = "./images/button-crear-gifo.svg";
     //Light mode logo
     logo.src = "./images/logo-mobile.svg";
+    //Light mode images in Create Section
+    camera.src ="./images/camara.svg";
+    film_reel.src = "./images/pelicula.svg";
     //Change in link to "MODO NOCTURNO" text
     theme_link.textContent = "Modo nocturno";
   }

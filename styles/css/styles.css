@@ -152,7 +152,6 @@ input {
   line-height: 1.88rem;
   text-transform: uppercase;
   letter-spacing: 0;
-  display: inline-block;
   margin: 4.88rem auto;
   padding: 1rem 2.25rem;
   width: auto;
@@ -160,6 +159,7 @@ input {
   border-radius: 1.9rem;
   cursor: pointer;
   text-align: center;
+  display: inline-block;
   outline: none;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
@@ -803,10 +803,6 @@ input {
   color: #000000;
 }
 
-.create .btn {
-  margin: 0;
-}
-
 .camera {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -940,6 +936,25 @@ input {
   background-color: #572EE5;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
+}
+
+.button {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.94rem;
+  line-height: 1.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  padding: 1rem 2.25rem;
+  width: auto;
+  border: 1px solid #572EE5;
+  border-radius: 1.9rem;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .empty {
@@ -1126,12 +1141,32 @@ input {
   color: #FFFFFF;
 }
 
-.dark .btn {
+.dark .modal {
+  background: rgba(34, 35, 38, 0.9);
+}
+
+.dark .modal__text {
+  color: #FFFFFF;
+}
+
+.dark .btn,
+.dark .button {
   border-color: #FFFFFF;
   color: #FFFFFF;
 }
 
-.dark .btn:hover {
+.dark .btn:hover,
+.dark .button:hover {
+  background-color: #FFFFFF;
+  color: #37383C;
+}
+
+.dark .step {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.dark .step_now {
   background-color: #FFFFFF;
   color: #37383C;
 }
@@ -1316,7 +1351,8 @@ input {
     line-height: 1.25rem;
   }
   /* Buttons Styles */
-  .btn:hover {
+  .btn:hover,
+  .button:hover {
     background-color: #572EE5;
     color: #FFFFFF;
   }

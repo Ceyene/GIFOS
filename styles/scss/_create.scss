@@ -23,10 +23,6 @@
         color: $dark-color;
     }
 
-    .btn {
-        margin: 0;
-    }
-
 }
 
 //Camera image
@@ -123,6 +119,20 @@
     background-color: $main-color;
     border: 1px solid $light-color;
     color: $light-color;
+}
+
+//Buttons
+.button {
+    margin: 0;
+    @include link(uppercase);
+    padding: $p-1 $p-25;
+    width: auto;
+    border: 1px solid $main-color;
+    border-radius: 1.9rem;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    transition: all 0.2s ease-in;
 }
 
 //Empty container

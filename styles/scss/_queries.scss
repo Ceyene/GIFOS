@@ -149,7 +149,8 @@
     }
 
     /* Buttons Styles */
-    .btn {
+    .btn,
+    .button {
 
         &:hover {
             background-color: $main-color;

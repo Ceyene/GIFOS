@@ -282,7 +282,7 @@
         <section class="create hide" id="create">
             <div class="create__layout">
                 <div class="camera">
-                    <img src="./images/camara.svg" alt="cámara">
+                    <img src="./images/camara.svg" alt="cámara" id="camera">
                     <img src="./images/Path 2.svg" alt="proyección" class="path">
                 </div>
                 <div class="upload__container">
@@ -309,6 +309,7 @@
                         </div>
 
                         <video class="recording_video hide" src="" id="recording_video"></video>
+                        <img src="" alt="" id="recorded_gifo">
 
                     </div>
                 </div>
@@ -324,12 +325,15 @@
                     </div>
         
                     <div class="counter">
-                        <p class="counter__recording counter_text" id="counter_recording">0:00:00</p>
+                        <p class="counter__recording counter_text hide" id="counter_recording">0:00:00</p>
                         <button class="counter__repeat counter_text hide" id="counter_repeat">Repetir captura</button>
                     </div>
         
                     <div class="upload__bar"></div>
-                    <a href="#" class="btn">Comenzar</a>
+                    <a href="#" id="begin_btn" class="button">Comenzar</a>
+                    <a href="#" id="record_btn" class="button hide">Grabar</a>
+                    <a href="#" id="end_btn" class="button hide">Finalizar</a>
+                    <a href="#" id="upload_btn" class="button hide">Subir Gifo</a>
                 </div>
                 <div class="film_reel">
                     <img src="./images/pelicula.svg" alt="Rollo película" id="film_reel">
@@ -362,6 +366,7 @@
     </footer>
 
     <!-- Script Links -->
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="./script/main.js"></script>
     <script src="./script/trending.js"></script>
     <script src="./script/search.js"></script>
