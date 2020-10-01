@@ -57,7 +57,7 @@ storeScroll();
 
 /* ----- Change of image in Navbar when hover ----- */
 //Variable
-let create_img = document.getElementById("create_img");
+const create_img = document.getElementById("create_img");
 
 //Change of url when hover
 create_img.addEventListener("mouseover", ()=> {
@@ -82,10 +82,10 @@ create_img.addEventListener("mouseout", ()=> {
 
 /* ------------------ Dark Mode -------------------- */
 //Variables
-let theme_btn = document.getElementById("theme_btn");
-let body = document.getElementById("body");
-let logo = document.getElementById("logo");
-let theme_link = document.getElementById("theme_link");
+const theme_btn = document.getElementById("theme_btn");
+const body = document.getElementById("body");
+const logo = document.getElementById("logo");
+const theme_link = document.getElementById("theme_link");
 
 // When click on "MODO NOCTURNO" link, apply dark mode
 theme_btn.addEventListener("click", (e)=> {
@@ -138,42 +138,64 @@ function scrollStep() {
 
 /* - End of Go to the Top when Click on Menu Links - */
 
-/* ---------- Show/Hide Favorites Section ---------- */
+/* ------------ Show Favorites Section ------------- */
 //Variables
 const fav_link = document.getElementById("fav_link");
 const favorites = document.getElementById("favorites");
 const hero = document.getElementById("hero");
 const results = document.getElementById("results");
+const create = document.getElementById("create");
 
-// When click on "FAVORITOS" link, hide Hero and My Gifos, show Favorites Section
+// When click on "FAVORITOS" link, hide Hero, My Gifos, Create and show Favorites Section
 fav_link.addEventListener("click", (e)=> {
   e.preventDefault();
   scrollStep(); //Go to the top
   hero.classList.add("hide");
   results.classList.add("hide");
   my_gifos.classList.add("hide");
+  create.classList.add("hide");
   favorites.classList.remove("hide");
   renderFavorites();
 });
 
-/* ------ End of Show/Hide Favorites Section -------- */
+/* -------- End of Show Favorites Section ----------- */
 
-/* ---------- Show/Hide My Gifos Section ------------ */
+/* ------------- Show My Gifos Section -------------- */
 //Variables
-let my_gifos_link = document.getElementById("my_gifos_link");
-let my_gifos = document.getElementById("my_gifos");
+const my_gifos_link = document.getElementById("my_gifos_link");
+const my_gifos = document.getElementById("my_gifos");
 
-// When click on "MY GIFOS" link, hide Hero and Favorites, show My Gifos Section
+// When click on "MY GIFOS" link, hide Hero, Favorites, Create and show My Gifos Section
 my_gifos_link.addEventListener("click", (e)=> {
   e.preventDefault();
   scrollStep(); //Go to the top
   hero.classList.add("hide");
   results.classList.add("hide");
   favorites.classList.add("hide");
+  create.classList.add("hide");
   my_gifos.classList.remove("hide");
 });
 
-/* ------- End of Show/Hide My Gifos Section --------- */
+/* --------- End of Show My Gifos Section ----------- */
+
+/* ----------- Show Create Gifos Section ------------ */
+//Variables
+const create_link = document.getElementById("create_link");
+const trending = document.getElementById("trending");
+
+// When click on create image, hide Hero, Favorites, Trending and show Create Section
+create_link.addEventListener("click", (e)=> {
+  e.preventDefault();
+  scrollStep(); //Go to the top
+  hero.classList.add("hide");
+  results.classList.add("hide");
+  favorites.classList.add("hide");
+  trending.classList.add("hide");
+  my_gifos.classList.add("hide");
+  create.classList.remove("hide");
+});
+
+/* -------- End of Show Create Gifos Section --------- */
 
 /* --------- Trending Section Slider Mobile ---------- */
 //Variables
