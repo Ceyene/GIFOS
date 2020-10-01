@@ -24,17 +24,20 @@
     &__buttons {
         z-index: 2;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 0.6rem;
+        right: 0.6rem;
         display: flex;
         justify-content: space-between;
         width: 10rem;
         opacity: 1;
 
         img {
-            margin: 0.63rem;
+            margin: 0.3rem;
+            padding: 0.44rem;
             opacity: 0.5;
             z-index: 3;
+            background-color: $light-color;
+            border-radius: 7%;
 
             &:hover {
                 opacity: 1;
