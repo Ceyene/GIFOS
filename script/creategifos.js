@@ -258,7 +258,7 @@ function repeatRecording() {
 
 //Final step: If you want to download a created new gifo, click download button
 async function downloadMyGifo(gifoImg) {
-    let blob = await fetch(gifoImg).then( img => img.blob());;
+    let blob = await fetch("https://media.giphy.com/media/" + gifoImg + "/giphy.gif").then( img => img.blob());
     invokeSaveAsDialog(blob, "myGifo.gif");
 }
 

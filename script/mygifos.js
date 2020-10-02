@@ -20,15 +20,32 @@ function renderMyGifos() {
     } else {
         myGifosArray = JSON.parse(myGifosString);
         console.log(myGifosArray);
-        //Bring info from api about MyGifos Array
+        //Bring information from api about MyGifos Array
         let urlMyGifos = `https://api.giphy.com/v1/gifs?ids=${myGifosArray.toString()}&api_key=${api_key}`;
 
-        //Use Array with information and send it to HTML
+        //Use API information and send My Gifos to HTML
         getData(urlMyGifos, my_gifos_gifos, trash_img, erase_gifo);
     }
 }
 
 function erase(gifo) {
-
+    let Array
 }
+//Erase Favorite Gifo
+function erase(gifo){
+    let arrayAux = [];
+    arrayAux = JSON.parse(myGifosString);
+    let index = arrayAux.indexOf(gifo);
+    console.log(arrayAux);
+    console.log(index);
+
+    arrayAux.splice(index, 1);
+
+    let newMyGifosString = JSON.stringify(arrayAux);
+    localStorage.setItem("myGifos", newMyGifosString);
+
+    //Reloading page
+    location.reload();
+}
+
 /* --------------- End of My Gifos JS ---------------- */

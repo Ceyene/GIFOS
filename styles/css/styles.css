@@ -982,6 +982,12 @@ input {
   margin-bottom: 1rem;
 }
 
+.overlay__info {
+  position: absolute;
+  top: 35%;
+  right: 33%;
+}
+
 .overlay .gifo__buttons {
   width: 7rem;
 }
