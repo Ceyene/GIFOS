@@ -186,7 +186,7 @@ function uploadGifo() {
             <button class="gifo__btn" id="link_btn">
                 <img src="./images/icon-link-hover.svg" alt="link">
             </button>`;
-            upload_btn.classList.add("hide");
+            upload_btn.classList.add("invisible");
 
             //If MyGifos in LocalStorage is empty, MyGifos array keeps empty
             if (myGifosString == null) {
