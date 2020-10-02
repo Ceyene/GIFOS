@@ -49,7 +49,7 @@ function renderFavorites() {
         console.log(favoriteArray);
         let urlFavorites = `https://api.giphy.com/v1/gifs?ids=${favoriteArray.toString()}&api_key=${api_key}`;
         //console.log(urlFavorites);
-        getData(urlFavorites, fav_gifos, fav_act_img, fav_remove, fav);
+        getSectionsData(urlFavorites, fav_gifos, fav_act_img, fav_remove, fav);
     }
 }
 

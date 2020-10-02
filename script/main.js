@@ -182,6 +182,7 @@ my_gifos_link.addEventListener("click", (e)=> {
   favorites.classList.add("hide");
   create.classList.add("hide");
   my_gifos.classList.remove("hide");
+  renderMyGifos();
 });
 
 /* --------- End of Show My Gifos Section ----------- */

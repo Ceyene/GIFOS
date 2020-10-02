@@ -41,6 +41,7 @@ function gifoBoxTemplate(gifo, leftButton, leftFunction, type) {
 
 //No results in screen
 function noResults(iconUrl, place, msg){
+    place.innerHTML = "";
     let cont = document.createElement("div");
     cont.classList.add("error_msg");
     let text = document.createElement("p");
@@ -51,7 +52,6 @@ function noResults(iconUrl, place, msg){
     cont.appendChild(icon);
     cont.appendChild(text);
     place.appendChild(cont);
-    more_btn.classList.add("invisible");
 }
 
 //Rendering Gifos
@@ -59,22 +59,28 @@ function renderAllGifos(arrayGifos, container, favButton, favFunction, type){
     let content = "";
 
     //First, verify if array of gifos is empty and render error
-    if(arrayGifos.data.length === 0){
+    if(arrayGifos.data.length == 0){
         container.classList.remove("grid");
         noResults(icon_search, results_grid, "Intenta con otra búsqueda");
+        more_btn.classList.add("invisible");
 
     } else {
         //If array of gifos is not empty, render it
         for (const gifo of arrayGifos.data) {
             content += gifoBoxTemplate(gifo, favButton, favFunction, type);
+            more_btn.classList.remove("invisible");
         }
         container.innerHTML += content;
-    }
-  }
 
-  
+        //If there are less than 12 results, hide "Ver más" button
+        if(arrayGifos.pagination.total_count <= (arrayGifos.pagination.offset + 12)){
+            more_btn.classList.add("invisible");
+        }
+    }
+}
+
 //Get data from API
-function getData(url, container, favButton, favFunction, type){
+function getSectionsData(url, container, favButton, favFunction, type){
     fetch(url)
         .then((response) => response.json())
         .then((content) => {
@@ -84,10 +90,33 @@ function getData(url, container, favButton, favFunction, type){
         .catch((error) => console.log("Gifo no encontrado: ", error));
 };
 
+  //Rendering Trending Gifos
+  function renderTrendingGifos(arrayGifos, container, favButton, favFunction, type) {
+
+    let content = "";
+
+    for (const gifo of arrayGifos.data) {
+        content += gifoBoxTemplate(gifo, favButton, favFunction, type);
+    }
+    container.innerHTML += content;
+
+  }
+
+//Get data from API
+function getTrendingData(url, container, favButton, favFunction, type){
+    fetch(url)
+        .then((response) => response.json())
+        .then((content) => {
+            console.log(content);
+            renderTrendingGifos(content, container, favButton, favFunction, type);
+        })
+        .catch((error) => console.log("Gifo no encontrado: ", error));
+};
+
 //Obtain the data from Giphy Api and send it to Trending section HTML
 function trendings() {
-    getData(url_trending, slider, fav_img, fav_add, fav);
-}
+    getTrendingData(url_trending, slider, fav_img, fav_add, fav);
+};
 
 trendings();
 

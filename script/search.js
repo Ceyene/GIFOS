@@ -23,7 +23,7 @@ function searchGifos() {
     
     const search = url_search + "&limit=12&q=" + value + "/"; //Add searching words to url
     console.log(search);
-    getData(search, results_grid, fav_img, fav_add); //Obtain data from API and render results in HTML
+    getSectionsData(search, results_grid, fav_img, fav_add, fav); //Obtain data from API and render results in HTML
 
     closeAutocompleteSection(); //Close suggested search terms in input
 }
@@ -134,7 +134,7 @@ function seeMoreResults() {
   offset = offset + 12;
   value = search_input.value.trim();
   let search_more = url_search + "&limit=12&q=" + value + "&offset=" + offset;
-  getData(search_more, results_grid, fav_img, fav_add);
+  getSectionsData(search_more, results_grid, fav_img, fav_add, fav);
 
 }
 

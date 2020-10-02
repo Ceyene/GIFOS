@@ -13,18 +13,19 @@ renderMyGifos();
 function renderMyGifos() {
     my_gifos_gifos.innerHTML = ""; //Avoid repeating
 
-    //First, validate if there are any uploaded gifos
+    //First, validate if there are any uploaded gifos in LocalStorage
     if (myGifosString == null || myGifosString == "[]") {
         my_gifos_gifos.classList.remove("grid"); //Style of container
         noResults(my_gifos_icon, my_gifos_gifos, "¡Animate a crear tu primer GIFO!"); //Show message
     } else {
-        myGifosArray = JSON.parse(myGifosString);
+        myGifosArray = JSON.parse(myGifosString); //Create a new array with Info in LocalStorage converted to String
         console.log(myGifosArray);
-        //Bring information from api about MyGifos Array
+        //Bring information from api about MyGifos Array in LocalStorage
         let urlMyGifos = `https://api.giphy.com/v1/gifs?ids=${myGifosArray.toString()}&api_key=${api_key}`;
+        console.log(urlMyGifos);
 
         //Use API information and send My Gifos to HTML
-        getData(urlMyGifos, my_gifos_gifos, trash_img, erase_gifo);
+        getSectionsData(urlMyGifos, my_gifos_gifos, trash_img, erase_gifo, erase_gifo);
     }
 }
 
