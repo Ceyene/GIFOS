@@ -1,7 +1,7 @@
 /* -------------------- Favorites JS ------------------ */
 
 //Variables
-let fav_grifos = document.getElementById("fav_grifos");
+let fav_gifos = document.getElementById("fav_gifos");
 const fav_icon = "./images/icon-fav-sin-contenido.svg";
 const fav_act_img = "./images/icon-fav-active.svg";
 let favoriteArray = [];
@@ -38,18 +38,18 @@ function addFav(gifo) {
 //Render Favorites in Section HTML
 function renderFavorites() {
 
-    fav_grifos.innerHTML = ""; //Avoid repeating
+    fav_gifos.innerHTML = ""; //Avoid repeating
 
     //First, validate if there are any favorites
     if (favoriteString == null || favoriteString == "[]") {
-        fav_grifos.classList.remove("grid"); //Style of container
-        noResults(fav_icon, fav_grifos, "Guarda tu primer GIFO en favoritos para que se muestre aquí"); //Show message
+        fav_gifos.classList.remove("grid"); //Style of container
+        noResults(fav_icon, fav_gifos, "Guarda tu primer GIFO en favoritos para que se muestre aquí"); //Show message
     } else {
         favoriteArray = JSON.parse(favoriteString);
         console.log(favoriteArray);
         let urlFavorites = `https://api.giphy.com/v1/gifs?ids=${favoriteArray.toString()}&api_key=${api_key}`;
-        getData(urlFavorites, fav_grifos, fav_act_img, fav_remove);
-
+        console.log(urlFavorites);
+        getData(urlFavorites, fav_gifos, fav_act_img, fav_remove, fav);
     }
 }
 
@@ -84,7 +84,7 @@ function removeFav(gifo){
 //Download gifo, when click download button
 async function downloadGifo(gifoImg, gifoName) {
     let blob = await fetch(gifoImg).then(img => img.blob());
-    invokeSaveAsDialog(blob, gifoName + ".gif");
+    invokeSaveAsDialog(blob, gifoName + "myGifo.gif");
 }
 
 /* ---------------- End of Download JS ---------------- */
